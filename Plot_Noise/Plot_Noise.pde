@@ -57,7 +57,7 @@ void render(boolean write) {
 void renderLines(int layer, boolean write) {
 
   if (write) {
-    beginRecord(SVG, "output/filename_"+timeSeed+"_layer"+layer+".svg");
+    beginRecord(SVG, "output/filename_"+timeSeed+"_layer"+(layer+1)+".svg");
 
     // gives an outline for print registration
     stroke(127);
