@@ -35,6 +35,8 @@ void setup() {
   noiseSeed(0);
   randomSeed(0);
   noFill();
+  
+  timeSeed = generateTimeSeed();
 }
 
 void draw() {
@@ -80,8 +82,12 @@ void renderLines(int layer, boolean write) {
   }
 }
 
+int generateTimeSeed() {
+  return  year()+month()+day()+hour()+minute()+second()+millis();
+}
+
 void mouseClicked() {
-  timeSeed = year()+month()+day()+hour()+minute()+second()+millis();
+  timeSeed = generateTimeSeed();
   println(timeSeed);
   noiseSeed( timeSeed );
   randomSeed( timeSeed );
